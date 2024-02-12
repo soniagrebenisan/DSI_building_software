@@ -1,0 +1,16 @@
+ 1009  git add -A
+ 1010  git status
+ 1011  git commit -m "python script to print graph of shelter bed occupancy"
+ 1012  git remote -v
+ 1013  git push origin
+ 1014  history > homework_1_building_software.txt
+ 1015  python python_assignment_2_as_script.py /Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv
+ 1016  python python_assignment_2_as_script.py '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv'
+ 1017  python python_assignment_2_as_script.py '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv' occupied_beds unoccupied_beds
+ 1018  python python_assignment_2_as_script.py '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv' occupied_beds unoccupied_beds
+ 1019  python python_assignment_2_as_script.py '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv' occupied_beds unoccupied_beds
+ 1020  python python_assignment_2_as_script.py '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv' occupied_beds unoccupied_beds
+ 1021  git status
+ 1022  git status
+ 1023  git commit -am "tried my best at config files"
+ 1024  git push origin
