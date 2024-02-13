@@ -1,5 +1,15 @@
 # from city of toronto open data portal
 dataset_url: https://github.com/UofT-DSI/python/blob/main/data/Daily%20shelter%20overnight%20occupancy.csv
+
 colors:
-  col1: ['tab:blue']
-  col2: ['tab:orange']
+  col1: 'tab:blue'
+  col2: 'tab:orange'
+
+columns:
+  col1: 'occupied_beds'
+  col2: 'unoccupied_beds'
+
+labels:
+  x: 'Date'
+  y: 'Beds'
+  title: 'Shelter Beds - Toronto - By Date'
