@@ -10,16 +10,9 @@ import yaml
 # Define command-line arguments
 parser = argparse.ArgumentParser(description='Dataset analysis script')
 parser.add_argument('config', type=str, help='Path to the configuration file')
-# parser.add_argument('--title', '-t', type=str, help='Plot title')
-# parser.add_argument('--output_file', '-o', type=str, help='Output plot filename')
-########## parser.add_argument('column1', type=str, help='First column you want to plot')
-########## parser.add_argument('column2', type=str, help='Second column you want to plot')
 
 # Parse the command-line arguments
 args = parser.parse_args()
-
-# Print the path to the configuration file
-# print(args.config)
 
 config_files = ['userconfig.yaml']
 # config_files += args.config  # not sure what this does but it was messing up my code
@@ -58,9 +51,5 @@ ax.set_xlabel(config['labels']['x'])
 ax.set_ylabel(config['labels']['y']) 
 ax.set_axisbelow(True)
 ax.grid(alpha=0.3)
-# ax.legend([unoccupied_beds, occupied_beds]
-#           , ['Unoccupied Beds', 'Occupied Beds']
-#           , bbox_to_anchor=(1, 1)
-#           , loc='upper left')
 
 plt.savefig('shelter_beds.png')
