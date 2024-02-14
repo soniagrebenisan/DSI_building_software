@@ -52,16 +52,21 @@ shelter_occupancy = shelter_occupancy.rename(columns=lower_names)
 
 fig, ax = plt.subplots()
 
-occupied_beds = ax.scatter(shelter_occupancy['occupancy_date']
-            , shelter_occupancy[config['columns']['col1']]
-            , c=[config['colors']['col1']]
-            , marker=(5,1) # because it's cute and happy
-            )
-unoccupied_beds = ax.scatter(shelter_occupancy['occupancy_date']
-            , shelter_occupancy[config['columns']['col2']]
-            , c=[config['colors']['col2']]
-            , marker=(5,1) # and shelter data is sad
-            )
+# Homework 2, task 1.2 & 1.3: use try/except to make sure that the columns being used exist in the dataset
+try:
+    occupied_beds = ax.scatter(shelter_occupancy['occupancy_date']
+                , shelter_occupancy[config['columns']['col1']]
+                , c=[config['colors']['col1']]
+                , marker=(5,1) # because it's cute and happy
+                )
+    unoccupied_beds = ax.scatter(shelter_occupancy['occupancy_date']
+                , shelter_occupancy[config['columns']['col2']]
+                , c=[config['colors']['col2']]
+                , marker=(5,1) # and shelter data is sad
+                )
+except NameError as e:
+    e.add_note("The column you entered is not a column in this dataset")
+    raise e 
 
 ax.set_title(config['labels']['title'])
 ax.set_xlabel(config['labels']['x'])
