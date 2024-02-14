@@ -5,6 +5,7 @@ import math
 import matplotlib.pyplot as plt
 import argparse
 import yaml
+# Homework 2, task 2.1:
 import logging
 
 
@@ -12,17 +13,31 @@ import logging
 parser = argparse.ArgumentParser(description='Dataset analysis script')
 parser.add_argument('config', type=str, help='Path to the configuration file')
 
+# Homework2, task 2.2:
+parser.add_argument('--verbose', '-v', action='store_true')
+parser.add_argument('--quiet', '-q', action='store_true')
+# Parse the command-line arguments
+args = parser.parse_args()
+
+# Homework2, task 2.2:
+
+if args.verbose:
+    logging_level = logging.INFO
+elif args.quiet:
+    logging_level = logging.ERROR
+else:
+    logging_level = logging.WARNING
+
 # Set logging level to 'INFO' so that we know that things ran properly
 logging.basicConfig(
-    level=logging.INFO
+    level=logging_level
     , handlers=[
         logging.StreamHandler() # to console
         , logging.FileHandler('shelter_logging.log') # to file
         ]
     )
 
-# Parse the command-line arguments
-args = parser.parse_args()
+
 
 config_files = ['userconfig.yaml']
 # config_files += args.config  # not sure what this does but it was messing up my code
