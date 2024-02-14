@@ -37,8 +37,6 @@ logging.basicConfig(
         ]
     )
 
-
-
 config_files = ['userconfig.yaml']
 # config_files += args.config  # not sure what this does but it was messing up my code
 
@@ -54,8 +52,8 @@ config_data = pd.read_csv(args.config)
 shelter_occupancy = config_data # this is unnecessary, I know
 # '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv'
 
-# Homework 2: log that we have successfully loaded the dataset
-logging.info(f"Successfully loaded shelter_occupancy") 
+# Homework 2, task 2.3: log that we have successfully loaded the dataset
+logging.info("Successfully loaded shelter_occupancy") 
 
 # Homework 2, task 1.1: adding an assertion in case the wrong size dataset is loaded
 assert shelter_occupancy.shape == (27079, 32), "Please load dataset again, it is not the right size"
