@@ -5,11 +5,21 @@ import math
 import matplotlib.pyplot as plt
 import argparse
 import yaml
+import logging
 
 
 # Define command-line arguments
 parser = argparse.ArgumentParser(description='Dataset analysis script')
 parser.add_argument('config', type=str, help='Path to the configuration file')
+
+# Set logging level to 'INFO' so that we know that things ran properly
+logging.basicConfig(
+    level=logging.INFO
+    , handlers=[
+        logging.StreamHandler() # to console
+        , logging.FileHandler('shelter_logging.log') # to file
+        ]
+    )
 
 # Parse the command-line arguments
 args = parser.parse_args()
@@ -28,6 +38,13 @@ config_data = pd.read_csv(args.config)
 
 shelter_occupancy = config_data # this is unnecessary, I know
 # '/Users/soniagrebenisan1/Desktop/personal/dsi_course/topic_2_python/data/Daily shelter overnight occupancy.csv'
+
+# Homework 2: log that we have successfully loaded the dataset
+logging.info(f"Successfully loaded shelter_occupancy") 
+
+# Homework 2, task 1.1: adding an assertion in case the wrong size dataset is loaded
+assert shelter_occupancy.shape == (27079, 32), "Please load dataset again, it is not the right size"
+assert 'OCCUPANCY_DATE' in shelter_occupancy.columns, "Error loading shelter_occupancy, occupancy_date is not a column"
 
 def lower_names(df):
     return df.lower()
